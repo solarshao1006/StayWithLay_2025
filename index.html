@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>2025年度贝壳追兴总结</title>
+    <title>2025贝壳r追兴年度报告</title>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     
     <style>
@@ -26,40 +26,22 @@
             overflow: hidden;
             height: 100vh;
             width: 100vw;
-            /* 防止iOS回弹 */
             overscroll-behavior: none; 
         }
 
         /* --- 右上角全局音乐开关 --- */
         .global-music-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 36px;
-            height: 36px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            cursor: pointer;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 0 10px rgba(123, 0, 255, 0.5);
-            transition: all 0.3s;
+            position: fixed; top: 20px; right: 20px; width: 36px; height: 36px;
+            background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%; z-index: 1000; display: flex; align-items: center; justify-content: center;
+            font-size: 18px; cursor: pointer; backdrop-filter: blur(5px);
+            box-shadow: 0 0 10px rgba(123, 0, 255, 0.5); transition: all 0.3s;
         }
         .global-music-btn.rotating {
-            animation: spin 4s linear infinite;
-            background: rgba(123, 0, 255, 0.4);
-            border-color: var(--lay-gold);
-            box-shadow: 0 0 15px rgba(123, 0, 255, 0.8);
+            animation: spin 4s linear infinite; background: rgba(123, 0, 255, 0.4);
+            border-color: var(--lay-gold); box-shadow: 0 0 15px rgba(123, 0, 255, 0.8);
         }
-        .global-music-btn.paused {
-            opacity: 0.5;
-            animation: none;
-        }
+        .global-music-btn.paused { opacity: 0.5; animation: none; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
         /* 背景装饰 */
@@ -150,88 +132,106 @@
         .movie-poster-box img { width: 100%; height: 100%; object-fit: cover; }
 
         /* --- 歌词页图片样式 --- */
-        .album-cover-box {
-            width: 140px;
-            height: 140px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            border: 2px solid rgba(255,255,255,0.2);
-            margin-bottom: 15px; 
-        }
+        .album-cover-box { width: 140px; height: 140px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.2); margin-bottom: 15px; }
         .album-cover-box img { width: 100%; height: 100%; object-fit: cover; }
 
         /* --- 歌词滑动页样式 --- */
-        .lyrics-mask {
-            width: 300px;
-            height: 200px;
-            position: relative;
-            overflow: hidden;
-            mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
-        }
-        .lyrics-wrapper {
-            position: absolute;
-            width: 100%;
-            top: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            animation: lyricsScroll 12s linear infinite;
-        }
-        .lyric-line {
-            font-size: 14px;
-            color: rgba(255,255,255,0.6);
-            text-align: center;
-            width: 100%;
-        }
-        .lyric-line.focus {
-            color: var(--lay-gold);
-            font-size: 16px;
-            font-weight: bold;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        }
-        @keyframes lyricsScroll {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-160%); }
-        }
+        .lyrics-mask { width: 300px; height: 200px; position: relative; overflow: hidden; mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%); }
+        .lyrics-wrapper { position: absolute; width: 100%; top: 100%; display: flex; flex-direction: column; align-items: center; gap: 15px; animation: lyricsScroll 12s linear infinite; }
+        .lyric-line { font-size: 14px; color: rgba(255,255,255,0.6); text-align: center; width: 100%; }
+        .lyric-line.focus { color: var(--lay-gold); font-size: 16px; font-weight: bold; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+        @keyframes lyricsScroll { 0% { transform: translateY(0); } 100% { transform: translateY(-160%); } }
 
         /* --- 日历样式 --- */
-        .calendar-view { 
-            width: 330px; 
-            height: 50vh; 
-            max-height: 400px; 
-            margin: 20px auto; 
-            background: rgba(255, 255, 255, 0.05); 
-            padding: 15px; 
-            border-radius: 10px; 
-            box-shadow: 0 0 15px rgba(0,0,0,0.5); 
-            display: grid; 
-            grid-template-rows: auto 1fr; 
-            overflow-y: auto; 
-            overscroll-behavior: contain; 
-            -webkit-overflow-scrolling: touch;
-        }
+        .calendar-view { width: 330px; height: 50vh; max-height: 400px; margin: 20px auto; background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.5); display: grid; grid-template-rows: auto 1fr; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
         .calendar-months { display: flex; flex-direction: column; gap: 15px; padding-top: 5px; }
         .month-header { font-size: 18px; color: var(--lay-gold); text-align: left; margin-bottom: 5px; font-weight: bold; }
         .weekdays { display: grid; grid-template-columns: repeat(7, 1fr); font-size: 10px; color: #ccc; text-align: center; padding-bottom: 5px; }
         .day-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; font-size: 12px; }
         .day-cell { height: 30px; display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.5); position: relative; }
         .day-cell.current-month { color: var(--text-white); }
-        .highlight-day { background: var(--lay-purple); color: var(--text-white) !important; border-radius: 50%; width: 25px; height: 25px; box-shadow: 0 0 8px rgba(123, 0, 255, 0.8); }
-        .event-label { position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: var(--lay-gold); color: #120520; font-size: 8px; padding: 2px 4px; border-radius: 3px; white-space: nowrap; opacity: 0; transition: opacity 0.3s; z-index: 100; pointer-events: none; }
-        .highlight-day:hover .event-label { opacity: 1; }
+        .highlight-day { background: var(--lay-purple); color: var(--text-white) !important; border-radius: 50%; width: 25px; height: 25px; box-shadow: 0 0 8px rgba(123, 0, 255, 0.8); cursor: pointer; transition: transform 0.2s; }
+        .highlight-day:active { transform: scale(1.2); }
+        
+        /* 新增：日历点击后的底部提示横幅 */
+        #calendar-toast {
+            position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%);
+            background: rgba(123, 0, 255, 0.9); border: 1px solid var(--lay-gold);
+            color: #fff; padding: 8px 20px; border-radius: 30px; font-size: 14px;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s;
+            z-index: 20; box-shadow: 0 5px 15px rgba(0,0,0,0.5); white-space: nowrap;
+        }
+        #calendar-toast.show { opacity: 1; }
 
-        /* --- 地图样式 --- */
-        .map-container { width: 300px; height: 300px; position: relative; margin: 20px auto; background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 70%); border-radius: 50%; border: 1px dashed rgba(255,255,255,0.1); }
+        /* --- 地图样式 (升级版) --- */
+        .map-container { width: 320px; height: 320px; position: relative; margin: 20px auto; }
+        /* 抽象地图轮廓 SVG */
+        .map-bg-svg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            fill: none; stroke: rgba(255,255,255,0.1); stroke-width: 1;
+            pointer-events: none; z-index: 0;
+        }
+        /* 恢复金色圆点 */
         .map-dot { position: absolute; width: 8px; height: 8px; background-color: var(--lay-gold); border-radius: 50%; box-shadow: 0 0 8px var(--lay-gold); transform: translate(-50%, -50%); z-index: 2; }
         .map-dot::after { content: attr(data-city); position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 10px; color: #fff; white-space: nowrap; opacity: 0.8; }
-        .dot-bj { top: 25%; left: 45%; } .dot-nj { top: 45%; left: 55%; } .dot-sh { top: 50%; left: 60%; } .dot-sz { top: 75%; left: 40%; } .dot-hk-island { top: 82%; left: 35%; } .dot-hk { top: 78%; left: 45%; } .dot-seoul { top: 20%; left: 75%; }
+        
+        /* 坐标微调以匹配大致地图形状 */
+        .dot-bj { top: 25%; left: 48%; } 
+        .dot-nj { top: 45%; left: 55%; } 
+        .dot-sh { top: 50%; left: 60%; } 
+        .dot-sz { top: 70%; left: 48%; } 
+        .dot-hk { top: 74%; left: 50%; } 
+        .dot-hk-island { top: 82%; left: 40%; } 
+        .dot-seoul { top: 25%; left: 75%; }
+        
         .map-lines { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
-        .flight-path { fill: none; stroke: rgba(123, 0, 255, 0.5); stroke-width: 1.5; stroke-dasharray: 1000; stroke-dashoffset: 1000; }
-        .page.active .flight-path { animation: dash 4s linear forwards 0.5s; }
+        /* 航线：北京->南京->上海->深圳->海口->香港->首尔 */
+        .flight-path { 
+            fill: none; stroke: rgba(123, 0, 255, 0.4); stroke-width: 1.5; 
+            stroke-dasharray: 1000; stroke-dashoffset: 1000;
+        }
+        .page.active .flight-path { animation: dash 6s linear forwards 0.5s; }
         @keyframes dash { to { stroke-dashoffset: 0; } }
+
+        /* 小飞机图标 */
+        .plane-icon {
+            position: absolute;
+            top:0; left:0;
+            font-size: 16px;
+            color: #B685FF;
+            z-index: 3;
+            /* 使用 offset-path 让飞机沿着 path 飞 */
+            offset-path: path("M 153 80 L 176 144 L 192 160 L 153 224 L 128 262 L 160 236 L 240 80");
+            offset-rotate: auto 45deg; /* 修正飞机头朝向 */
+            animation: flyPlane 6s linear infinite;
+        }
+        @keyframes flyPlane {
+            0% { offset-distance: 0%; }
+            100% { offset-distance: 100%; }
+        }
+
+        /* --- 词云页面样式 --- */
+        .word-cloud-container {
+            width: 300px; height: 300px;
+            position: relative; transform-style: preserve-3d;
+            perspective: 500px; margin: 20px auto;
+        }
+        .word-tag {
+            position: absolute; top: 50%; left: 50%;
+            transform-style: preserve-3d;
+            font-size: 14px; color: rgba(255,255,255,0.8);
+            white-space: nowrap;
+            animation: floatWord 6s ease-in-out infinite alternate;
+        }
+        /* 简单的随机浮动动画 */
+        @keyframes floatWord {
+            0% { transform: translate(-50%, -50%) translateZ(-50px) scale(0.8); opacity: 0.5; }
+            100% { transform: translate(-50%, -50%) translateZ(50px) scale(1.2); opacity: 1; }
+        }
+        /* 不同词汇的颜色和大小 */
+        .w-large { font-size: 24px; color: var(--lay-gold); font-weight: bold; text-shadow: 0 0 10px var(--lay-gold); }
+        .w-medium { font-size: 18px; color: var(--lay-purple); font-weight: bold; }
+        .w-small { font-size: 12px; color: #ccc; }
 
         /* --- 黑胶唱片样式 --- */
         .vinyl-box { width: 220px; height: 220px; margin: 30px auto; position: relative; display: flex; align-items: center; justify-content: center; cursor: pointer; }
@@ -242,49 +242,22 @@
         .playing .vinyl-needle { transform: rotate(0deg); }
         @keyframes rotate { to { transform: rotate(360deg); } }
 
-        /* --- 🌟 新增：作者信息栏样式 🌟 --- */
+        /* --- 作者信息栏样式 --- */
         .author-section {
-            margin-top: 20px;
-            padding: 12px 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
+            margin-top: 20px; padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05); border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            width: 85%;
-            max-width: 300px;
-            backdrop-filter: blur(5px);
+            width: 85%; max-width: 300px; backdrop-filter: blur(5px);
         }
         .author-title {
-            font-size: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.4);
-            margin-bottom: 8px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 5px;
+            font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.4); margin-bottom: 8px; text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px;
         }
-        .social-icons {
-            display: flex;
-            justify-content: space-around;
-            font-size: 12px;
-            color: #ddd;
-        }
-        .social-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2px;
-        }
-        .social-item span:first-child {
-            font-size: 10px;
-            color: var(--lay-gold);
-            opacity: 0.8;
-            margin-bottom: 2px;
-        }
-        .social-item span:last-child {
-            font-size: 11px;
-            font-family: sans-serif;
-        }
+        .social-icons { display: flex; justify-content: space-around; font-size: 12px; color: #ddd; }
+        .social-item { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+        .social-item span:first-child { font-size: 10px; color: var(--lay-gold); opacity: 0.8; margin-bottom: 2px; }
+        .social-item span:last-child { font-size: 11px; font-family: sans-serif; }
 
     </style>
 </head>
@@ -308,36 +281,31 @@
                 <div class="pearl"></div>
                 <div class="shell-top"></div>
             </div>
-            <h1 class="fade-in-up delay-2">2025年度追兴报告</h1>
+            <h1 class="fade-in-up delay-2">2025年度追兴总结</h1>
             <p class="fade-in-up delay-3">from Solar</p>
             <p class="fade-in-up delay-4" style="font-size:12px; opacity:0.7; margin-top:20px;">上滑开启你的紫色星海</p>
             <div class="swipe-indicator"></div>
         </div>
 
-        <!-- Page 1: 入坑 (带电影海报) -->
+        <!-- Page 1: 入坑 -->
         <div class="page" data-index="1">
             <div class="icon-shell fade-in-up">🎬</div>
             <h2 class="fade-in-up delay-1">故事的开始</h2>
             <div class="date-tag fade-in-up delay-2">2025年 4月</div>
-            
             <div class="movie-poster-box fade-in-up delay-3">
                 <img src="img/MovieCover_mumu.jpg" alt="电影剧照">
             </div>
-            
             <p class="fade-in-up delay-4">初见小马。</p>
             <div class="swipe-indicator"></div>
         </div>
 
-        <!-- Page 2: 入坑曲歌词滑动页 (新增图片) -->
+        <!-- Page 2: 入坑曲 -->
         <div class="page" data-index="2">
             <h2 class="fade-in-up">入坑曲</h2>
             <p class="fade-in-up delay-1" style="font-size:12px; opacity:0.8;">🎶 当心脏开始共振，世界只余你我。</p>
-            
             <div class="album-cover-box fade-in-up delay-2">
-                <!-- 请替换图片链接 -->
                 <img src="img/PsychicCover.jpeg" alt="专辑封面">
             </div>
-            
             <div class="lyrics-mask fade-in-up delay-3">
                 <div class="lyrics-wrapper">
                     <div class="lyric-line">I feel you watching me roll</div>
@@ -352,14 +320,13 @@
                     <div class="lyric-line focus">You might be psychic</div>
                 </div>
             </div>
-            
             <div class="swipe-indicator"></div>
         </div>
 
         <!-- Page 3: 初见 -->
         <div class="page" data-index="3">
             <h2 class="fade-in-up">初见</h2>
-            <div class="date-tag fade-in-up delay-1">5月 · 北京</div>
+            <div class="date-tag fade-in-up delay-1">5月</div>
             <div class="photo-gallery fade-in-up delay-2">
                 <div class="photo-item">
                     <img src="img/20250530_Beijing.jpg" class="event-photo">
@@ -370,7 +337,7 @@
             <div class="swipe-indicator"></div>
         </div>
 
-        <!-- Page 4: 戏剧的魅力 -->
+        <!-- Page 4: 戏剧 -->
         <div class="page" data-index="4">
             <h2 class="fade-in-up">受到召唤 · 敦煌</h2>
             <div class="date-tag fade-in-up delay-1">6月 · 南京</div>
@@ -384,14 +351,14 @@
             <div class="swipe-indicator"></div>
         </div>
 
-        <!-- Page 5: 八月特种兵 -->
+        <!-- Page 5: 八月 -->
         <div class="page" data-index="5">
             <h2 class="fade-in-up">频繁见面的八月</h2>
             <p class="fade-in-up delay-1">5场 · 3城</p>
             <div class="photo-gallery fade-in-up delay-2">
                  <div class="photo-item">
                     <img src="img/20250803_Beijing-min.JPG" class="event-photo">
-                    <span class="photo-caption">北京闹天宫首场，炸翻你</span>
+                    <span class="photo-caption">北京闹天宫首场<br>炸翻你</span>
                  </div>
                  <div class="photo-item">
                     <img src="img/20250816_Haikou.jpg" class="event-photo">
@@ -399,15 +366,14 @@
                  </div>
                  <div class="photo-item">
                     <img src="img/20250830_Shenzhen-min.jpg" class="event-photo">
-                    <span class="photo-caption">在深圳一起度过七夕</span>
+                    <span class="photo-caption">在深圳度过七夕</span>
                  </div>
-                 
             </div>
-            <p class="fade-in-up delay-3" style="margin-top:15px">见面吧，在这个炎热的夏天。</p>
+            <p class="fade-in-up delay-3" style="margin-top:15px">见面吧<br>在这个炎热的夏天。</p>
             <div class="swipe-indicator"></div>
         </div>
         
-        <!-- Page 6: 上海站 (2张图) -->
+        <!-- Page 6: 上海 -->
         <div class="page" data-index="6">
             <h2 class="fade-in-up">九月·上海站</h2>
             <div class="date-tag fade-in-up delay-1">9月</div>
@@ -421,7 +387,7 @@
                     <span class="photo-caption">上海 Day 2</span>
                 </div>
             </div>
-            <p class="fade-in-up delay-3" style="margin-top:15px">见证梅塞德斯奔驰场馆的第999、1000场演出！</p>
+            <p class="fade-in-up delay-3" style="margin-top:15px">见证梅塞德斯奔驰场馆的<br>第999、1000场演出！</p>
             <div class="swipe-indicator"></div>
         </div>
         
@@ -433,14 +399,14 @@
             <div class="photo-gallery fade-in-up delay-3">
                 <div class="photo-item">
                     <img src="img/20251007_Beijing.jpg" class="event-photo climax">
-                    <span class="photo-caption">那天是你生日，有我的生日</span>
+                    <span class="photo-caption">那天是你生日<br>有我的生日</span>
                 </div>
             </div>
-            <p class="fade-in-up delay-4" style="margin-top:10px">航行还未抵达终点，属于我们的故事也还在连载。</p>
+            <p class="fade-in-up delay-4" style="margin-top:10px">航行还未抵达终点<br>属于我们的故事也还在连载。</p>
             <div class="swipe-indicator"></div>
         </div>
 
-        <!-- Page 8: 日历 (完整版) -->
+        <!-- Page 8: 日历 -->
         <div class="page" data-index="8">
             <div class="icon-shell fade-in-up">📅</div>
             <h2 class="fade-in-up delay-1">2025 追兴日历</h2>
@@ -457,7 +423,7 @@
                             <span class="day-cell current-month">11</span><span class="day-cell current-month">12</span><span class="day-cell current-month">13</span><span class="day-cell current-month">14</span><span class="day-cell current-month">15</span><span class="day-cell current-month">16</span><span class="day-cell current-month">17</span>
                             <span class="day-cell current-month">18</span><span class="day-cell current-month">19</span><span class="day-cell current-month">20</span><span class="day-cell current-month">21</span><span class="day-cell current-month">22</span><span class="day-cell current-month">23</span><span class="day-cell current-month">24</span>
                             <span class="day-cell current-month">25</span><span class="day-cell current-month">26</span><span class="day-cell current-month">27</span><span class="day-cell current-month">28</span><span class="day-cell current-month">29</span>
-                            <span class="day-cell highlight-day" data-event="北京首站">30<span class="event-label">北京京东夏日歌会</span></span>
+                            <span class="day-cell highlight-day" data-event="北京首站: 京东夏日歌会">30</span>
                             <span class="day-cell current-month">31</span>
                         </div>
                     </div>
@@ -468,7 +434,7 @@
                         <div class="day-grid">
                             <span class="day-cell current-month">1</span>
                             <span class="day-cell current-month">2</span><span class="day-cell current-month">3</span><span class="day-cell current-month">4</span><span class="day-cell current-month">5</span><span class="day-cell current-month">6</span>
-                            <span class="day-cell highlight-day" data-event="南京话剧">7<span class="event-label">受到召唤敦煌-南京站</span></span>
+                            <span class="day-cell highlight-day" data-event="南京: 受到召唤敦煌话剧">7</span>
                             <span class="day-cell current-month">8</span><span class="day-cell current-month">9</span><span class="day-cell current-month">10</span><span class="day-cell current-month">11</span><span class="day-cell current-month">12</span><span class="day-cell current-month">13</span><span class="day-cell current-month">14</span>
                             <span class="day-cell current-month">15</span><span class="day-cell current-month">16</span><span class="day-cell current-month">17</span><span class="day-cell current-month">18</span><span class="day-cell current-month">19</span><span class="day-cell current-month">20</span><span class="day-cell current-month">21</span>
                             <span class="day-cell current-month">22</span><span class="day-cell current-month">23</span><span class="day-cell current-month">24</span><span class="day-cell current-month">25</span><span class="day-cell current-month">26</span><span class="day-cell current-month">27</span><span class="day-cell current-month">28</span>
@@ -482,15 +448,15 @@
                         <div class="day-grid">
                             <span class="day-cell current-month"></span><span class="day-cell current-month"></span><span class="day-cell current-month"></span><span class="day-cell current-month"></span><span class="day-cell current-month"></span>
                             <span class="day-cell current-month">1</span>
-                            <span class="day-cell highlight-day" data-event="北京大航海">2<span class="event-label">五巡大航海-北京站</span></span>
-                            <span class="day-cell highlight-day" data-event="北京大航海">3<span class="event-label">五巡大航海-北京站</span></span>
+                            <span class="day-cell highlight-day" data-event="北京: 大航海巡演 Day1">2</span>
+                            <span class="day-cell highlight-day" data-event="北京: 大航海巡演 Day2">3</span>
                             <span class="day-cell current-month">4</span><span class="day-cell current-month">5</span><span class="day-cell current-month">6</span><span class="day-cell current-month">7</span><span class="day-cell current-month">8</span><span class="day-cell current-month">9</span><span class="day-cell current-month">10</span>
                             <span class="day-cell current-month">11</span><span class="day-cell current-month">12</span><span class="day-cell current-month">13</span><span class="day-cell current-month">14</span><span class="day-cell current-month">15</span>
-                            <span class="day-cell highlight-day" data-event="海口大航海">16<span class="event-label">五巡大航海-海口站</span></span>
+                            <span class="day-cell highlight-day" data-event="海口: 大航海巡演">16</span>
                             <span class="day-cell current-month">17</span><span class="day-cell current-month">18</span><span class="day-cell current-month">19</span><span class="day-cell current-month">20</span><span class="day-cell current-month">21</span><span class="day-cell current-month">22</span><span class="day-cell current-month">23</span>
                             <span class="day-cell current-month">24</span><span class="day-cell current-month">25</span><span class="day-cell current-month">26</span><span class="day-cell current-month">27</span><span class="day-cell current-month">28</span><span class="day-cell current-month">29</span>
-                            <span class="day-cell highlight-day" data-event="深圳大航海">30<span class="event-label">五巡大航海-深圳站</span></span>
-                            <span class="day-cell highlight-day" data-event="深圳大航海">31<span class="event-label">五巡大航海-深圳站</span></span>
+                            <span class="day-cell highlight-day" data-event="深圳: 大航海巡演 Day1">30</span>
+                            <span class="day-cell highlight-day" data-event="深圳: 大航海巡演 Day2">31</span>
                         </div>
                     </div>
                     <!-- 9月 -->
@@ -500,8 +466,8 @@
                         <div class="day-grid">
                             <span class="day-cell current-month"></span><span class="day-cell current-month">1</span><span class="day-cell current-month">2</span><span class="day-cell current-month">3</span><span class="day-cell current-month">4</span><span class="day-cell current-month">5</span><span class="day-cell current-month">6</span>
                             <span class="day-cell current-month">7</span><span class="day-cell current-month">8</span><span class="day-cell current-month">9</span><span class="day-cell current-month">10</span><span class="day-cell current-month">11</span><span class="day-cell current-month">12</span>
-                            <span class="day-cell highlight-day" data-event="上海大航海">13<span class="event-label">五巡大航海-上海站</span></span>
-                            <span class="day-cell highlight-day" data-event="上海大航海">14<span class="event-label">五巡大航海-上海站</span></span>
+                            <span class="day-cell highlight-day" data-event="上海: 大航海巡演 Day1">13</span>
+                            <span class="day-cell highlight-day" data-event="上海: 大航海巡演 Day2">14</span>
                             <span class="day-cell current-month">15</span><span class="day-cell current-month">16</span><span class="day-cell current-month">17</span><span class="day-cell current-month">18</span><span class="day-cell current-month">19</span><span class="day-cell current-month">20</span><span class="day-cell current-month">21</span>
                             <span class="day-cell current-month">22</span><span class="day-cell current-month">23</span><span class="day-cell current-month">24</span><span class="day-cell current-month">25</span><span class="day-cell current-month">26</span><span class="day-cell current-month">27</span><span class="day-cell current-month">28</span>
                             <span class="day-cell current-month">29</span><span class="day-cell current-month">30</span>
@@ -515,7 +481,7 @@
                             <span class="day-cell current-month"></span><span class="day-cell current-month"></span><span class="day-cell current-month"></span>
                             <span class="day-cell current-month">1</span><span class="day-cell current-month">2</span><span class="day-cell current-month">3</span><span class="day-cell current-month">4</span>
                             <span class="day-cell current-month">5</span><span class="day-cell current-month">6</span>
-                            <span class="day-cell highlight-day" data-event="鸟巢收官">7<span class="event-label">美猴王大闹天宫-鸟巢站</span></span>
+                            <span class="day-cell highlight-day" data-event="北京: 鸟巢收官演唱会">7</span>
                             <span class="day-cell current-month">8</span><span class="day-cell current-month">9</span><span class="day-cell current-month">10</span><span class="day-cell current-month">11</span>
                             <span class="day-cell current-month">12</span><span class="day-cell current-month">13</span><span class="day-cell current-month">14</span><span class="day-cell current-month">15</span><span class="day-cell current-month">16</span><span class="day-cell current-month">17</span><span class="day-cell current-month">18</span>
                             <span class="day-cell current-month">19</span><span class="day-cell current-month">20</span><span class="day-cell current-month">21</span><span class="day-cell current-month">22</span><span class="day-cell current-month">23</span><span class="day-cell current-month">24</span><span class="day-cell current-month">25</span>
@@ -529,17 +495,18 @@
                         <div class="day-grid">
                             <span class="day-cell current-month"></span><span class="day-cell current-month">1</span><span class="day-cell current-month">2</span><span class="day-cell current-month">3</span><span class="day-cell current-month">4</span><span class="day-cell current-month">5</span><span class="day-cell current-month">6</span>
                             <span class="day-cell current-month">7</span><span class="day-cell current-month">8</span><span class="day-cell current-month">9</span><span class="day-cell current-month">10</span><span class="day-cell current-month">11</span><span class="day-cell current-month">12</span><span class="day-cell current-month">13</span>
-                            <span class="day-cell highlight-day" data-event="首尔FM">14<span class="event-label">首尔FM</span></span>
+                            <span class="day-cell highlight-day" data-event="首尔: EXO FanMeeting">14</span>
                             <span class="day-cell current-month">15</span>
                             <span class="day-cell current-month">16</span><span class="day-cell current-month">17</span><span class="day-cell current-month">18</span><span class="day-cell current-month">19</span><span class="day-cell current-month">20</span>
                             <span class="day-cell current-month">21</span><span class="day-cell current-month">22</span><span class="day-cell current-month">23</span><span class="day-cell current-month">24</span><span class="day-cell current-month">25</span><span class="day-cell current-month">26</span><span class="day-cell current-month">27</span>
                             <span class="day-cell current-month">28</span><span class="day-cell current-month">29</span><span class="day-cell current-month">30</span>
-                            <span class="day-cell highlight-day" data-event="香港跨年">31<span class="event-label">香港跨年</span></span>
+                            <span class="day-cell highlight-day" data-event="香港: 跨年演唱会">31</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <p class="fade-in-up delay-3" style="opacity:0.8; font-size:14px;">这是我们生命重合的每个瞬间。</p>
+            <!-- 底部横幅提示框 -->
+            <div id="calendar-toast">点击日期查看行程</div>
             <div class="swipe-indicator"></div>
         </div>
 
@@ -549,22 +516,28 @@
             <div class="date-tag fade-in-up delay-1">12月 终章</div>
             <div class="photo-gallery fade-in-up delay-2">
                 <div class="photo-item">
-                    <img src="https://placehold.co/110x150/7B00FF/fff?text=EXO" class="event-photo">
+                    <img src="img/shell_tobecontinued2.jpg" class="event-photo">
                     <span class="photo-caption">首尔FM</span>
                 </div>
                 <div class="photo-item">
-                    <img src="https://placehold.co/110x150/FFD700/000?text=HK" class="event-photo">
+                    <img src="img/shell_tobecontinued2.jpg" class="event-photo">
                     <span class="photo-caption">香港·烟花</span>
                 </div>
             </div>
-            <p class="fade-in-up delay-3" style="margin-top:15px">首尔的雪与香港的烟花<br>都有你。</p>
+            <p class="fade-in-up delay-3" style="margin-top:15px">首尔的雪与香港的烟花<br>都与你一起。</p>
             <div class="swipe-indicator"></div>
         </div>
 
-        <!-- Page 10: 地图 -->
+        <!-- Page 10: 地图 (升级版) -->
         <div class="page" data-index="10">
             <h2 class="fade-in-up">2025 追兴地图</h2>
             <div class="map-container fade-in-up delay-1">
+                <!-- 地图轮廓 SVG (简化的东亚/中国东部/韩国) -->
+                <svg class="map-bg-svg" viewBox="0 0 300 300">
+                    <!-- 简单勾勒中国东部海岸线和朝鲜半岛轮廓，非精确地理 -->
+                    <path d="M120,50 L150,60 L160,90 L190,80 L220,60 L240,70 L220,100 L180,120 L160,160 L120,230 L100,260 L80,250" stroke="rgba(255,255,255,0.1)" fill="none" />
+                </svg>
+
                 <div class="map-dot dot-bj" data-city="北京"></div>
                 <div class="map-dot dot-nj" data-city="南京"></div>
                 <div class="map-dot dot-sh" data-city="上海"></div>
@@ -574,15 +547,40 @@
                 <div class="map-dot dot-seoul" data-city="首尔"></div>
                 
                 <svg class="map-lines">
-                    <path class="flight-path" d="M 135 75 L 165 135 L 105 246 L 120 225 L 180 150 L 135 75 L 225 60 L 135 234" />
+                    <!-- 航线 -->
+                    <path class="flight-path" d="M 153 80 L 176 144 L 192 160 L 153 224 L 128 262 L 160 236 L 240 80" />
                 </svg>
+                
+                <!-- 小飞机 -->
+                <div class="plane-icon">✈️</div>
             </div>
             <p class="fade-in-up delay-2">7城 · 13场 · 如果没有爱...那从xx到xx的距离也太远了</p>
             <div class="swipe-indicator"></div>
         </div>
 
-        <!-- Page 11: 黑胶唱片 (音乐交互) -->
+        <!-- 🌟 Page 11: 3D 词云 (新增页面) 🌟 -->
         <div class="page" data-index="11">
+            <h2 class="fade-in-up">年度关键词</h2>
+            <p class="fade-in-up delay-1" style="font-size:12px; opacity:0.7;">我的追星 DNA</p>
+            
+            <div class="word-cloud-container fade-in-up delay-2">
+                <div class="word-tag w-large" style="animation-delay:0s;">老公</div>
+                <div class="word-tag w-large" style="animation-delay:-1s; top:30%; left:20%;">张艺兴</div>
+                <div class="word-tag w-medium" style="animation-delay:-2s; top:70%; left:70%;">莲莲</div>
+                <div class="word-tag w-medium" style="animation-delay:-3s; top:20%; left:80%;">闹天宫</div>
+                <div class="word-tag w-small" style="animation-delay:-4s; top:80%; left:20%;">抢票</div>
+                <div class="word-tag w-small" style="animation-delay:-5s; top:40%; left:10%;">大航海五巡</div>
+                <div class="word-tag w-medium" style="animation-delay:-1.5s; top:60%; left:40%;">宝宝</div>
+                <div class="word-tag w-small" style="animation-delay:-2.5s; top:10%; left:50%;">贝壳</div>
+                <div class="word-tag w-medium" style="animation-delay:-3.5s; top:85%; left:60%;">小羊蹄</div>
+                <div class="word-tag w-small" style="animation-delay:-0.5s; top:50%; left:85%;">Bob</div>
+            </div>
+            
+            <div class="swipe-indicator"></div>
+        </div>
+
+        <!-- Page 12: 黑胶唱片 -->
+        <div class="page" data-index="12">
             <h2 class="fade-in-up">Would U Be Mine</h2>
             <p class="fade-in-up delay-1" style="font-size:12px; opacity:0.7">点击播放 🎵</p>
             
@@ -597,13 +595,12 @@
             <div class="swipe-indicator"></div>
         </div>
 
-        <!-- Page 12: 结尾 (含作者信息) -->
-        <div class="page" data-index="12">
+        <!-- Page 13: 结尾 -->
+        <div class="page" data-index="13">
             <div class="icon-shell fade-in-up">💜</div>
             <h2 class="fade-in-up delay-1">2026</h2>
             <p class="fade-in-up delay-2">未来无限大，陪 <b>张艺兴</b> 一起走。</p>
             
-            <!-- 🌟 新增：作者信息栏 🌟 -->
             <div class="author-section fade-in-up delay-3">
                 <div class="author-title">PRODUCED BY <span style="color:var(--lay-gold)">Solar</span></div>
                 <div class="social-icons">
@@ -635,14 +632,13 @@
         const globalBgm = document.getElementById('global-bgm');
         const vinylBgm = document.getElementById('vinyl-bgm');
         const toggleBtn = document.getElementById('music-toggle');
-        let isGlobalPlaying = false; // 记录用户是否手动关闭了全局音乐
+        let isGlobalPlaying = false; 
 
-        // 1. 尝试首次交互自动播放全局音乐
         let hasInteracted = false;
         function tryPlayGlobal() {
             if (!hasInteracted && globalBgm.paused && vinylBgm.paused) {
                 globalBgm.play().then(() => {
-                    isGlobalPlaying = true; // 标记为播放状态
+                    isGlobalPlaying = true; 
                     toggleBtn.classList.add('rotating');
                     toggleBtn.classList.remove('paused');
                 }).catch(e => console.log("Auto-play prevented"));
@@ -652,9 +648,7 @@
         document.body.addEventListener('touchstart', tryPlayGlobal, {once: true});
         document.body.addEventListener('click', tryPlayGlobal, {once: true});
 
-        // 2. 右上角手动开关逻辑
         toggleBtn.onclick = () => {
-            // 如果黑胶正在放，优先暂停黑胶，并重置黑胶UI
             if (!vinylBgm.paused) {
                 vinylBgm.pause();
                 document.querySelector('.vinyl-box').classList.remove('playing');
@@ -673,22 +667,18 @@
             }
         };
 
-        // 3. 黑胶唱片独占逻辑
         function toggleVinyl(el) {
             if (vinylBgm.paused) {
-                // 用户点击播放黑胶：暂停全局，播放黑胶
                 globalBgm.pause();
-                toggleBtn.classList.remove('rotating'); // 全局按钮停止旋转
-                toggleBtn.classList.add('paused'); // 视觉上显示暂停
+                toggleBtn.classList.remove('rotating'); 
+                toggleBtn.classList.add('paused'); 
                 
                 vinylBgm.play();
                 el.classList.add('playing');
             } else {
-                // 用户点击暂停黑胶：恢复全局（如果之前是播放状态），暂停黑胶
                 vinylBgm.pause();
                 el.classList.remove('playing');
                 
-                // 只有当用户没有手动关闭过全局音乐时，才自动恢复
                 if (isGlobalPlaying) {
                     globalBgm.play();
                     toggleBtn.classList.add('rotating');
@@ -708,17 +698,16 @@
             starContainer.appendChild(star);
         }
 
-        // --- 翻页逻辑 (含日历触摸检测) ---
+        // --- 翻页逻辑 ---
         let startY = 0;
         let currentIndex = 0;
         const pages = document.querySelectorAll('.page');
         const totalPages = pages.length;
         let isAnimating = false;
-        let isCalendarTouch = false; // 新增：检测是否在日历上触摸
+        let isCalendarTouch = false; 
 
         document.addEventListener('touchstart', (e) => {
             startY = e.touches[0].clientY;
-            // 关键逻辑：检查触摸点是否在日历区域内
             if (e.target.closest('.calendar-view')) {
                 isCalendarTouch = true;
             } else {
@@ -728,8 +717,6 @@
 
         document.addEventListener('touchend', (e) => {
             if(isAnimating) return;
-            
-            // 关键逻辑：如果正在摸日历，禁止翻页
             if(isCalendarTouch) return; 
 
             const diff = startY - e.changedTouches[0].clientY;
@@ -741,7 +728,6 @@
 
         document.addEventListener('wheel', (e) => {
             if(isAnimating) return;
-            // 滚轮也加个判断，如果鼠标在日历上，尽量不翻页（可选）
             if (e.target.closest('.calendar-view')) return; 
 
             if(e.deltaY > 0 && currentIndex < totalPages - 1) switchPage(currentIndex + 1);
@@ -772,6 +758,22 @@
             }, 800);
         }
 
+        // --- 日历点击交互 ---
+        document.querySelectorAll('.highlight-day').forEach(day => {
+            day.addEventListener('click', function(e) {
+                e.stopPropagation(); // 防止触发翻页
+                const eventName = this.getAttribute('data-event');
+                const toast = document.getElementById('calendar-toast');
+                toast.innerText = eventName;
+                toast.classList.add('show');
+                
+                // 2秒后消失
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 2000);
+            });
+        });
+
         // --- 生成长图保存逻辑 ---
         function generateLongImage() {
             alert("正在生成长图，请稍候...");
@@ -794,13 +796,16 @@
                 clone.style.display = 'flex';
                 clone.style.borderBottom = '2px solid rgba(255,255,255,0.1)';
                 
-                const anims = clone.querySelectorAll('.fade-in-up, .flight-path, .pearl, .lyrics-wrapper');
+                const anims = clone.querySelectorAll('.fade-in-up, .flight-path, .pearl, .lyrics-wrapper, .word-tag');
                 anims.forEach(el => {
                     el.style.opacity = '1';
                     el.style.transform = 'none';
                     el.style.animation = 'none';
                     el.style.strokeDashoffset = '0';
                 });
+
+                // 确保词云分散开（因为移除了动画，手动设置位置以防重叠）
+                // 简单处理：保持 CSS 中的 top/left 定位即可
 
                 const highlightDays = clone.querySelectorAll('.highlight-day');
                 highlightDays.forEach(day => {
