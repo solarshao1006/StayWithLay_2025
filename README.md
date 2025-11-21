@@ -93,7 +93,7 @@ My2025LayReport/  (根目录)
 
 点击 Save (保存)。
 
-等待约 1-2 分钟，刷新页面，顶部会出现一个链接（例如 https://yourname.github.io/LayReport/）。
+等待约 1-2 分钟，刷新页面，顶部会出现一个链接（例如 https://yourname.github.io/LayReport/ ）。
 
 复制这个链接，发给朋友或者发朋友圈吧！💜
 
