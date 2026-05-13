@@ -1,7 +1,8 @@
 # 💜 2025年度贝壳追兴总结 (Web Template)
 
 > “未来无限大，陪张艺兴一起走。” 🚢
-> 网页链接：https://solar-2025-stay-with-lay.netlify.app/
+**项目入口**
+https://solar-2025-stay-with-lay.netlify.app/
 
 这是一个专为 **张艺兴 (Lay Zhang)** 粉丝定制的年度追星总结网页模板。它是一个静态 H5 网页，类似于网易云音乐的年度报告。你可以用它记录这一年你去了哪里见他、听了什么歌、看过的电影以及那些感动的瞬间。
 
